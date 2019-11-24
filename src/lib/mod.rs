@@ -10,7 +10,7 @@ pub mod types;
 use types::{Grid, Cell};
 
 
-// this function initializes the canvas
+// initialize the canvas
 pub fn init(x: u32, y: u32) -> (Canvas<Window>, EventPump) {
     let sdl_context = sdl2::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
@@ -30,28 +30,6 @@ pub fn init(x: u32, y: u32) -> (Canvas<Window>, EventPump) {
     let event_pump = sdl_context.event_pump().unwrap();
     (canvas, event_pump)
 }
-
-/*
-pub fn display_rectangle (renderer: &mut Canvas<Window>, canvas_width: &u32, canvas_height: &u32) {
-    let red: u8 = rand::random();
-    let green: u8 = rand::random();
-    let blue: u8 = rand::random();
-
-    renderer.clear();
-
-    let drawing_color = Color::RGB(red, green, blue);
-    renderer.set_draw_color(drawing_color);
-
-    let square_definition = Rect::new(0, 0, *canvas_width, *canvas_height);
-
-    let square = renderer.fill_rect(square_definition);
-    match square {
-        Ok(()) => {}
-        Err(error) => println!("{}", error),
-    }
-
-    renderer.present();
-} */
 
 pub fn grid_init(nx_cells: u32, ny_cells: u32) -> Grid {
     let mut grid_vector = Vec::new();
@@ -85,7 +63,6 @@ pub fn display_cell(
     let x = cell_width * col;
     let y = cell_width * row;
 
-    //For now, we want random colors, to see what happens.
     //let cell_color = &grid[row as usize][col as usize];
     //let drawing_color = Color::RGB(cell_color.red, cell_color.green, cell_color.blue);
 

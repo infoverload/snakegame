@@ -22,7 +22,7 @@ pub fn snake_move(snakeHead: &mut SnakeHead, row_direction: &u32, col_direction:
 }
 
 
-//takes ownership of the grid, changes the color of the square, where the current SnakeHead is located. The grid is then the return value.
+//takes ownership of the grid, change color of the square where the current SnakeHead is located
 pub fn change_grid(snakeHead: &mut SnakeHead, renderer: &mut Canvas<Window>, grid_data: &Grid) -> Grid {
 
 
